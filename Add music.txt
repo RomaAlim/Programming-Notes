@@ -1,0 +1,22 @@
+
+Import AVFoundation
+    var audioPlayer = AVAudioPlayer()
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+	let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+        audioPlayer = try! AVAudioPlayer(contentsOf: url!)
+	audioPlayer.prepareToPlay()
+	
+        
+}
+
+// UISWitch
+@IBAction func music(_ sender: AnyObject) {
+        if sender.isOn == true {
+            audioPlayer.play()
+        }else{
+            audioPlayer.stop()
+        }
+        
+    }

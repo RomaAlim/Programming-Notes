@@ -1,0 +1,8 @@
+
+
+var pictures = [UIImage(named: "paper.png"), UIImage(named: "rock.png"), UIImage(named: "scissors.png"), UIImage(named: "draw.png")] // массив из картинок через индекс вызываешь
+
+
+    func random(min: Int, max: Int) -> Int {
+        return Int.random(in: min...max) // функция на рандомное число с мин и макс
+    }

@@ -1,0 +1,23 @@
+var timer = Timer()
+
+timer.invalidate()
+
+timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+
+@objc func updateTimer(){
+        if secondsPassed < totalTime{
+            proggres.progress = Float(secondsPassed) / Float(totalTime)
+            let minut = secondsPassed / 60
+            let second = secondsPassed % 60
+            timerLabel.text = "\(minut)'min \(second)'s to \(totalTime)'min"
+            secondsPassed += 1
+        } else{
+            timerLabel.text = "Finish"
+            finishLabel.text = "Done"
+            proggres.progress = Float(totalTime)
+            timer.invalidate()
+            player.play()
+            switchMusic.isOn = true
+            
+        }
+    }

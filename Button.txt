@@ -1,0 +1,11 @@
+
+Создаем Outlet Button, дальше меняем button. // Creating an Outlet Button, then changing the button.
+@IBOutlet weak var button: UIButton!
+override func viewWillAppear(_ animated: Bool) {
+        button.isHidden = false // показывает буттон // shows the button
+	button.layer.cornerRadius = 10 // Меняет радиус, округляет // Changes the radius, rounds
+    }
+Button.alpha = 0.5 // 50% прозрачный Button // 50% Transparent Button
+button.isHidden = true // скрывает Button // hides the Button
+Sender.backgroundColor = UIColor.green // background green
+(button).backgroundColor = UIColor.clear // clear background
